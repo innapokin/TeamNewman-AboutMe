@@ -1,0 +1,31 @@
+{
+	"info": {
+		"_postman_id": "67896125-88fa-4233-ae85-22b0fc58db0e",
+		"name": "MyTutorCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25901259"
+	},
+	"item": [
+		{
+			"name": "https://www.getpostman.com/collections/15036f85a35d875ecfdf",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.getpostman.com/collections/15036f85a35d875ecfdf",
+					"protocol": "https",
+					"host": [
+						"www",
+						"getpostman",
+						"com"
+					],
+					"path": [
+						"collections",
+						"15036f85a35d875ecfdf"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
