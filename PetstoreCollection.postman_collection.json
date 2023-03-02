@@ -13,11 +13,29 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code should be 200\", function () {\r",
+							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							"pm.test(\"Status code name shoud have an OK string\", function () {\r",
+							"var jsonData = pm.response.json();\r",
+							"console.log(jsonData)\r",
+							"console.log(jsonData.schemes)\r",
+							"console.log(jsonData.schemes[0])\r",
+							"\r",
+							"\r",
+							"pm.test(\"Status code name has OK\", function () {\r",
 							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"pet\");\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"https\");\r",
+							"});\r",
+							"//pm.test(\"Confirm that the total result is 2\", function () {\r",
+							" //   pm.expect(jsonData.schemes).to.eql(\"2\");\r",
+							"//});\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body(jsonData);\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -38,13 +56,23 @@
 					"path": [
 						"v2",
 						"swagger.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/swagger.json",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/swagger.json",
+					"host": [
+						"{{baseUrl}}"
 					],
-					"query": [
-						{
-							"key": "id",
-							"value": null,
-							"disabled": true
-						}
+					"path": [
+						"swagger.json"
 					]
 				}
 			},
